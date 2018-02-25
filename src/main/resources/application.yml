@@ -12,10 +12,10 @@ management:
 spring:
   cloud:
     client:
-      hostname: ${HOSTNAME}
+      hostname: ${HOSTNAME:127.0.0.1}
   # rabbitmq的地址 用户名 密码
   rabbitmq:
-    host: ${public_rabbitmq_host:60.205.209.106}
+    host: ${public_rabbitmq_host:10.10.21.103}
     username: ${public_rabbitmq_username:guest}
     password: ${public_rabbitmq_password:guest}
 
@@ -37,10 +37,10 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: ${eureka_service_url:http://192.168.99.100:8761/eureka/}
+      defaultZone: ${eureka_service_url:http://192.168.0.102:8761/eureka/}
   instance:
     # 不配置preferIpAddress，因为生产环境中，不直接使用IP，使用hostname，因为docker中自带DNS可以解析hostname
     # 心跳间隔
     leaseRenewalIntervalInSeconds: 10
-    hostname: ${HOSTNAME}
+    hostname: ${HOSTNAME:127.0.0.1}
   
