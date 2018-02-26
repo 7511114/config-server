@@ -12,7 +12,7 @@ management:
 spring:
   cloud:
     client:
-      hostname: ${HOSTNAME:127.0.0.1}
+      hostname: ${HOSTNAME}
   # rabbitmq的地址 用户名 密码
   rabbitmq:
     host: ${public_rabbitmq_host:10.10.21.103}
@@ -24,23 +24,28 @@ security:
   basic:
     enable: true
   # 这个接口不做用户名密码校验, /monitor接收git刷新通知
-  ignored: /monitor
+  ignored: /monitor,/encrypt
   user:
-    name: ${config_server_security_name:tony}
+    name: ${config_server_security_name:tom}
     password: ${config_server_security_password:12345678}
 encrypt:
   # 加解密用的秘钥
   key: ${config_server_encrypt_key:12345678}
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: changeme
 
 eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: ${eureka_service_url:http://192.168.0.102:8761/eureka/}
+      defaultZone: ${eureka_service_url:http://127.0.0.1:8761/eureka/}
   instance:
     # 不配置preferIpAddress，因为生产环境中，不直接使用IP，使用hostname，因为docker中自带DNS可以解析hostname
     # 心跳间隔
     leaseRenewalIntervalInSeconds: 10
-    hostname: ${HOSTNAME:127.0.0.1}
+    hostname: ${HOSTNAME}
   
