@@ -68,11 +68,12 @@ hystrix:
             # 命令执行超时时间 20秒
             timeoutInMilliseconds: 20000
 
-# 以下是自定义的配置，配置的值会被注入到TonyConfigurationBean这个类
-zuul:
-  # 是否开启默认fallback
-  defaultFallback:
-    enable: false
-  tokenFilter:
-    noAuthenticationRoutes: 
-      - uaa-token
+# 以下是自定义的配置，配置的值会被注入到ConfigurationBean这个类
+tom:
+  zuul:
+    # 是否开启默认fallback
+    defaultFallback:
+      enable: false
+    tokenFilter:
+      noAuthenticationRoutes: 
+        - uaa-token

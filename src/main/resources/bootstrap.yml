@@ -12,7 +12,7 @@ spring:
         # git仓库 gitlab地址
         git:
           # 记得在先gitlab上创建一个对应的project
-          uri: ${tony_configserver_git_uri}
+          uri: ${config_server_git_uri}
           search-paths:  ${config_server_search_path:/}
           username: ${config_server_git_username}
           password: ${config_server_git_password}
