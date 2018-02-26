@@ -12,7 +12,7 @@ management:
 spring:
   cloud:
     client:
-      hostname: ${HOSTNAME}
+      hostname: ${HOSTNAME:localhost}
   # rabbitmq的地址 用户名 密码
   rabbitmq:
     host: ${public_rabbitmq_host:10.10.21.103}
@@ -24,7 +24,7 @@ security:
   basic:
     enable: true
   # 这个接口不做用户名密码校验, /monitor接收git刷新通知
-  ignored: /monitor,/encrypt
+  ignored: /monitor
   user:
     name: ${config_server_security_name:tom}
     password: ${config_server_security_password:12345678}
@@ -47,5 +47,5 @@ eureka:
     # 不配置preferIpAddress，因为生产环境中，不直接使用IP，使用hostname，因为docker中自带DNS可以解析hostname
     # 心跳间隔
     leaseRenewalIntervalInSeconds: 10
-    hostname: ${HOSTNAME}
+    hostname: ${HOSTNAME:localhost}
   
