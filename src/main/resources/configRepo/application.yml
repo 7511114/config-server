@@ -18,7 +18,7 @@ spring:
   rabbitmq:
     host: rabbitmq
     username: guest
-    password: '{cipher}AQAdix9epTMkB7urDSSlSAE9g5j46S59ednXvfuwjFH8Zmw1MBmgZL/AarQq/VCyeGwRsB7b2jTlTQDasDYaFhUFeaRH79K52JjR3XV2NmzR1R8sjvd7w6apelb8Ryno1BWFrn5Uw59j0zzuVBlg/oEhv50o9zzBCIF0QER+Vdi5GQioIJSmvYi8OnrKR90vm7IkOK5sXvX3iocbLifm/yRi/SaeUTp6/EOqP1j9e4LE8WWEkNStfWdiT129JaFJ4N/WgkYhEHCNCbjrwdkvM8CIlcpPptUXo+wGE0QXiuVYYYhw01gJrW0PuehCEhByP6ehv+I3oAb+7PGEJzpGV4vkNsHltqbprik/w82iSOTHol+z0ivT7Y0ZnoAQu+2JpXM='
+    password: guest
   sleuth:
     sampler:
       # 1、采样比例
